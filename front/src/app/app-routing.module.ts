@@ -1,8 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {AuthorsComponent} from './authors/authors.component';
+import {CategoriesComponent} from './categories/categories.component';
+import {ProductListComponent} from './product-list/product-list.component';
+import {BookComponent} from './book/book.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+
+    {path: 'categories/', component: CategoriesComponent },
+    {path: 'categories/<int:category_id>', component: CategoriesComponent},
+    {path: 'categories/<int:category_id>/books', component: ProductListComponent},
+    {path: 'writers/', component: AuthorsComponent},
+    {path: 'writer/<int:writer_id>', component: AuthorsComponent},
+    {path: 'books', component: BookComponent},
+    {path: 'books/<int:book_id>', component: BookComponent},
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
