@@ -1,9 +1,9 @@
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 from rest_framework import viewsets
-from rest_framework import permissions
 
 from api.models import Category, Book, BookImage
 from api.serializers import CategorySerializer, BookSerializer, BookImageSerializer, UserSerializer
@@ -12,7 +12,6 @@ from api.serializers import CategorySerializer, BookSerializer, BookImageSeriali
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 class BooksListAPIView(APIView):
     def get(self, request):
