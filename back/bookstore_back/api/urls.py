@@ -1,9 +1,13 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
 from api.views import categories_list, get_category, writers_list, get_writer, CategoryBooksAPIView,\
-                      BookDetailAPIView, BooksListAPIView, ImageListAPIView, ImageDetailAPIView
+                      BookDetailAPIView, BooksListAPIView, ImageListAPIView, ImageDetailAPIView, UserViewSet
 from rest_framework_jwt.views import obtain_jwt_token
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('login/', obtain_jwt_token),
@@ -16,4 +20,5 @@ urlpatterns = [
     path('books/<int:book_id>', BookDetailAPIView.as_view()),
     path('images', ImageListAPIView.as_view()),
     path('images/<int:image_id>', ImageDetailAPIView.as_view()),
+    path('', include(router.urls)),
 ]
