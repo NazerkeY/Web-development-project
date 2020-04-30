@@ -3,31 +3,30 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status, generics, filters
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 
-from api.models import Category, Book, BookImage
-from api.serializers import CategorySerializer, BookSerializer, BookImageSerializer, UserSerializer
+from ..filters import BookFilter
+from ..models import  Book, BookImage
+from ..serializers import BookSerializer, BookImageSerializer, UserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
-class BooksListAPIView(APIView):
-    def get(self, request):
-        books = Book.objects.all()
-        serializer = BookSerializer(books, many=True)
-        return Response(serializer.data)
 
-    def post(self, request):
-        serializer = BookSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response({'error': serializer.errors},
-                        status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+class BooksListAPIView(generics.ListCreateAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    filter_backends = (DjangoFilterBackend,
+                       filters.SearchFilter,
+                       filters.OrderingFilter)
+    filter_class = BookFilter
+    filterset_fields = ('name', 'price',)
+    search_fields = ('name', 'price',)
+    ordering_fields = ('name', 'price',)
 
 
 class BookDetailAPIView(APIView):

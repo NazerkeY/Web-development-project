@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
-from api.models import Category, Writer, Book, BookImage
+from .models import Category, Writer, Book, BookImage
+
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -55,6 +56,7 @@ class BookImageSerializer(serializers.ModelSerializer):
 class BookSerializer(serializers.ModelSerializer):
     category = CategorySerializer()
     author = WriterSerializer()
+
     # image = BookImageSerializer()
 
     class Meta:
