@@ -8,7 +8,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService{
   createDb(){
 
-  const authors=[
+/*  const authors=[
   { id: 1001, name: 'Kiera Cass' },
   { id: 1002, name: 'Gillian Flynn' },
   { id: 1003, name: 'Lora Shroff' },
@@ -26,6 +26,6 @@ export class InMemoryDataService implements InMemoryDbService{
   }
   genId(authors: Author[]): number {
     return authors.length > 0 ? Math.max(...authors.map(authors => authors.id)) + 1 : 11;
-  }
+  } */
 
 }

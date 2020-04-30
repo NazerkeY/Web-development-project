@@ -160,7 +160,7 @@ import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import {Category} from '../models';
+import {Category, Authors} from '../models';
 @Injectable({
   providedIn: 'root'
 })
@@ -179,13 +179,13 @@ export class BookshopService {
   getProduct(id: number): Observable<any> {
     return this.http.get(this.BASE_URL + '/api/books/' + id + '/', this.httpOptions);
   }
-  getAuthors() {
+ /* getAuthors() {
      return this.http.get(this.BASE_URL + '/api/authors/', this.httpOptions)
       .pipe(
         tap(_ => console.log('fetched products')),
         catchError(this.handleError('getProducts', []))
       );
-  }
+  }  */
 
   getProducts(): Observable<any> {
     return this.http.get(this.BASE_URL + '/api/books/', this.httpOptions)
@@ -227,6 +227,10 @@ export class BookshopService {
 
    deleteCompany(id): Observable<any> {
     return this.http.delete(`${this.BASE_URL}/api/categories/${id}/`);
+  }
+
+  getAuthors(): Observable<Authors[]>{
+  return this.http.get<Authors[]>(`${this.BASE_URL}/api/writers/`);
   }
 
 }

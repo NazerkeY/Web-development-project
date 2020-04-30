@@ -2,7 +2,7 @@ export interface Category {
     name: string;
     id: number;
 }
-export const categoryType: Category[] = [
+/*export const categoryType: Category[] = [
     {   name: 'Action & Adventure',
         id: 5
     },
@@ -22,4 +22,4 @@ export const categoryType: Category[] = [
         id: 4
     },
 
-];
+];  */

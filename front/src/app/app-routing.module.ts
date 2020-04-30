@@ -13,13 +13,14 @@ import {BooksComponent} from './books/books.component';
 
 
 const routes: Routes = [
-    {path: '', redirectTo: '/signup', pathMatch: 'full'},
+    {path: '', redirectTo: '/home_page', pathMatch: 'full'},
+    {path:'home_page', component: HomePageComponent},
     {path: 'login', component: SignInComponent},
     {path:'signup', component:SignUpComponent},
-    {path: 'categories/', component: CategoriesComponent },
+    {path: 'categories', component: CategoriesComponent },
     {path: 'categories/<int:category_id>', component: CategoriesComponent},
     {path: 'categories/<int:category_id>/books', component: ProductListComponent},
-    {path: 'writers/', component: AuthorsComponent},
+    {path: 'writers', component: AuthorsComponent},
     {path: 'writer/<int:writer_id>', component: AuthorsComponent},
     {path: 'books', component: BooksComponent},
     {path: 'books/<int:book_id>', component: BooksComponent},

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Author } from '../authors';
 import { BookshopService } from '../service/bookshop.service';
 import {Authors} from '../models';
 
@@ -9,17 +8,16 @@ import {Authors} from '../models';
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent implements OnInit {
-      authors: Authors[];
+      authors: Authors[] = [];
 
-  constructor(private bookshopService: BookshopService) { }
+  constructor(public bookshopService: BookshopService) { }
 
   ngOnInit() {
     this.getAuthors();
   }
 
-  getAuthors(): void {
-    this.bookshopService.getAuthors()
-    .subscribe(authors => this.authors = authors);
+  getAuthors() {
+    this.bookshopService.getAuthors().subscribe(authors => this.authors = authors);
   }
 
 }

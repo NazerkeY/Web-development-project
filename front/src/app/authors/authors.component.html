@@ -20,7 +20,7 @@
       <div class = "block">
       <div *ngFor="let author of authors" >
         <a [title]="author.name + ' list of books'">
-          <a routerLink ="/authors/{{author.id}}/booklist" class = "authoritem">
+          <a routerLink ="'/writers/' + writers.id" class = "authoritem">
           <div class = "listitem">
           <span class = "number">{{author.id}}</span>
           <span class="authorname">{{author.name}}</span>
