@@ -1,0 +1,133 @@
+h3,p{
+  margin-left: 60px;
+}
+input {
+  margin-left: 60px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid #BDBDBD;
+}
+.try{
+  background-size: cover;
+  background-color: rgb(205, 231, 208);
+}
+label {
+  line-height: 16px;
+  padding: 0 24px;
+  color:  black;
+  margin-left: 60px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.right_side{
+  display: flex;
+  position: absolute;
+  top: -10px;
+  margin-left: 700px;
+}
+
+/* Button */
+.button, button {
+  margin-top: 10px;
+  margin-left: 60px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+}
+
+.button:hover, button:hover {
+  opacity: 0.8;
+  font-weight: normal;
+}
+.loginForm input,label{
+  display: flex;
+  flex-direction: column;
+}
+.login_form input{
+  display: block;
+  height: 41px;
+  width: 400px;
+  padding: 0 24px;
+  border: darkgray 1px solid;
+  color:#fe793c;
+  line-height: 16px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+.after_login {
+  display:flex;
+  flex-direction: row;
+}
+.after_login input,label{
+align-content: flex-start;
+}
+
+.after_login a{
+  font-size: 16px;
+  color: gray;
+  margin-left: 60px;
+
+}
+button{
+  padding: 12px 40px;
+  background-color: #fe793c;
+  border:none;
+  border-radius: 1px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+button:hover{
+  background-color: #fa5837;
+}
+.button:disabled, button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+footer{
+  margin-top: 45px;
+  display: flex;
+  background-color: #303030;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  position: relative;
+}
+
+
+
+.footer-refs{
+  padding: 10px;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-refs:hover{
+  text-decoration: underline;
+}
+
+.fa{
+  color: #303030;
+  background-color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  width: 12px;
+  text-decoration: none;
+  margin: 5px 2px;
+}

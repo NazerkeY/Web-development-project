@@ -1,0 +1,10 @@
+.img{
+background-image:url('https://images.unsplash.com/photo-1496849951355-c5e5e9b168c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80');
+background-position: center;
+background-size:cover;
+height:100vh;
+width:100vw;
+position:relative;
+overflow-x:hidden;
+z-index:1;
+}

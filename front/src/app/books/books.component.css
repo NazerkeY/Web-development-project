@@ -1,0 +1,135 @@
+.try{
+  background-size: cover;
+  width: 100%;
+  background-color: rgb(205, 231, 208);
+}
+label{
+  position: absolute;
+  top: 30px;
+  margin-left: 60px;
+}
+
+.add{
+  position: absolute;
+  top: 30px;
+  margin-left: 330px;
+}
+.products {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+  .products li {
+    color:black;
+    position: relative;
+    cursor: pointer;
+    background-color: #EEE;
+    margin: .5em;
+    left: 140px;
+    top:50px;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+
+  .products li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+  }
+
+  .products a {
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 250px;
+  }
+
+  .products a:hover {
+    color:#607D8B;
+  }
+
+  .products .badge {
+    display: inline-block;
+    font-size: small;
+    color: black;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color:#405061;
+    line-height: 1em;
+    position: relative;
+
+    height: 1.8em;
+    min-width: 16px;
+    text-align: right;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+
+  button {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial;
+  }
+
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  h2{
+    display: flex;
+    position: absolute;
+    margin-left: 500px;
+    top:0px;
+
+  }
+
+  button.delete {
+    position: absolute;
+    left: 240px;
+    top: 10px;
+    background-color: gray !important;
+    color: white;
+  }
+  footer{
+   padding:20px;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+}
+
+.footer-refs{
+  padding: 10px;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-refs:hover{
+  text-decoration: underline;
+}
+
+.fa{
+  color: #303030;
+  background-color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  width: 12px;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.logo{
+    display: flex;
+}
+.logo_img{
+  position: absolute;
+  top: 0px;
+  height: 50px;
+}
+

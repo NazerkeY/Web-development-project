@@ -1,0 +1,34 @@
+<div class = "authors">
+  <div class="wrapper">
+    <nav class = "nav-area">
+      <ul>
+        <li><a href="http://localhost:4200/home_page">Home</a></li>
+        <li><a href="http://localhost:4200/catogires">Categories</a></li>
+        <li><a href="http://localhost:4200/bookstores">Book Stores</a></li>
+        <li><a href="http://localhost:4200/login">Log In</a></li>
+        <li><a href="http://localhost:4200/signup">Sign Up</a></li>
+      </ul>
+
+      <form action="">
+        <input type="search" placeholder="Search">
+        <button class="btnsearch">Search</button>
+      </form>
+    </nav>
+
+    <div class="listauthors">
+      <h1 class = "title">Authors</h1>
+      <div class = "block">
+      <div *ngFor="let author of authors" >
+        <a [title]="author.name + ' list of books'">
+          <a routerLink ="/authors/{{author.id}}/booklist" class = "authoritem">
+          <div class = "listitem">
+          <span class = "number">{{author.id}}</span>
+          <span class="authorname">{{author.name}}</span>
+            </div>
+        </a>
+          </a>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
