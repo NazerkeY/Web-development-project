@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-from api.models import Category, Writer
-from api.serializers import CategorySerializer, WriterSerializer
+from ..models import Category, Writer
+from ..serializers import CategorySerializer, WriterSerializer
 
 
 @api_view(['GET', 'POST'])
